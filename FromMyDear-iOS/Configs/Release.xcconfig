@@ -1,0 +1,4 @@
+// 운영 환경 설정. 운영 서버 주소가 정해지면 교체한다.
+APP_DISPLAY_NAME = From My Dear
+API_BASE_URL = https:/$()/api.example.invalid
+USE_MOCK_SERVICES = NO

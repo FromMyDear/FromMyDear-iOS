@@ -1,0 +1,5 @@
+// 개발 환경 설정. xcconfig에서는 "//"가 주석이므로 URL은 "/$()/"로 끊어 쓴다.
+APP_DISPLAY_NAME = From My Dear (Dev)
+API_BASE_URL = http:/$()/localhost:8080
+// YES: Mock 서비스 사용 (서버 없이 실행) / NO: 실제 API 호출
+USE_MOCK_SERVICES = YES

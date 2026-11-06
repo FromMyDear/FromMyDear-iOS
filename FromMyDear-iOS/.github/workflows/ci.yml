@@ -1,0 +1,25 @@
+name: CI
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+
+jobs:
+  test:
+    # App Store 업로드 요건에 맞춰 Xcode 26이 설치된 러너를 사용한다.
+    # 러너 이미지 이름은 GitHub Actions 문서에서 현재 제공 목록을 확인해 맞춘다.
+    runs-on: macos-26
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: jdx/mise-action@v2   # mise.toml에 지정된 Tuist 설치
+
+      - name: Install dependencies
+        run: tuist install
+
+      - name: Generate project
+        run: tuist generate --no-open
+
+      - name: Test
+        run: tuist test FromMyDear
